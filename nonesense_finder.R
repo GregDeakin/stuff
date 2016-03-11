@@ -3,14 +3,14 @@ library(sqldf)
 
 matc <- readDNAStringSet("maternal.fa")
 patc <- readDNAStringSet("paternal.fa")
-qtlexons <- read.table("exons.txt",header=T)
+myexons <- read.table("exons.txt",header=T)
 
-q_f <- qtlexons[qtlexons$direction=="forward",]
-q_r <- qtlexons[qtlexons$direction=="reverse",]
+q_f <- myexons[myexons$direction=="forward",]
+q_r <- myexons[myexons$direction=="reverse",]
 
-genes <- sqldf("select min(Start) as start, max(End) as end, Gene_ID, direction from qtlexons group by Gene_ID")
-g_f <- sqldf("select min(Start) as start, max(End) as end, Gene_ID, direction from qtlexons where direction='forward' group by Gene_ID")
-g_r <- sqldf("select min(Start) as start, max(End) as end, Gene_ID, direction from qtlexons where direction='reverse' group by Gene_ID")
+genes <- sqldf("select min(Start) as start, max(End) as end, Gene_ID, direction from myexons group by Gene_ID")
+g_f <- sqldf("select min(Start) as start, max(End) as end, Gene_ID, direction from myexons where direction='forward' group by Gene_ID")
+g_r <- sqldf("select min(Start) as start, max(End) as end, Gene_ID, direction from myexons where direction='reverse' group by Gene_ID")
 
 getAAStringSet <- function(chr,exons,rev=F) {
 	ir <- IRanges(c(exons$Start),c(exons$End), names=exons$Gene_ID)
