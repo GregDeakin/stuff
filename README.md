@@ -9,7 +9,7 @@ myexons is an exon list for seq1 and 2 in the format: <br>
     <th>Start</th>
     <th>End</th>
     <th>Gene_ID</th>
-    <th>Exon></th>
+    <th>Exon</th>
     <th>direction</th>
   </tr>
   <tr>
@@ -26,4 +26,4 @@ myexons is an exon list for seq1 and 2 in the format: <br>
     <td>exon2</td>
     <td>forward</td>
   </tr>  
-</table
+</table>
