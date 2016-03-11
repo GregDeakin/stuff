@@ -1,9 +1,9 @@
 library(Biostrings)
 library(sqldf)
 
-matc <- readDNAStringSet("chr13_m116_maternal.fa")
-patc <- readDNAStringSet("chr13_m116_paternal.fa")
-qtlexons <- read.table("c13_exons.txt",header=T)
+matc <- readDNAStringSet("maternal.fa")
+patc <- readDNAStringSet("paternal.fa")
+qtlexons <- read.table("exons.txt",header=T)
 
 q_f <- qtlexons[qtlexons$direction=="forward",]
 q_r <- qtlexons[qtlexons$direction=="reverse",]
