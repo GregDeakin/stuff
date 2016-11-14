@@ -1,6 +1,8 @@
 # stuff
 Space for things which don't belong in any repo
 
+Mostly a bunch of perl scripts which do -things...
+
 ##Nonesense_finder.R
 Finds nonesense mutations in seq1 vs seq2.<br>
 myexons is an exon list for seq1 and 2 in the format: <br>
